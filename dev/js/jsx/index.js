@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 // Bootstrap React-apps
 const appsCollection = document.querySelectorAll('[data-react-app]');
 
-appsCollection.forEach((appContainer) => {
+[...appsCollection].forEach((appContainer) => {
   const appName = appContainer.getAttribute('data-react-app');
   const App = require(`./apps/${appName}`).default;
 

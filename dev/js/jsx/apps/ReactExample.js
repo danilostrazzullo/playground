@@ -14,24 +14,46 @@ import Heading from '../components/Heading'
 // helpers
 import HELPERS from '../../helpers/';
 
-class CardLoadApp extends React.Component {
+class TestComponent extends React.Component {
   constructor() {
     super();
-    this.windowWidth = this.windowWidth.bind(this);
+    this.data = [33, 111, 109, 109, 105, 77, 32, 105, 114, 117, 103, 117, 65];
+    this.stuff = this.elaborateData(this.data);
+    
+    this.logData(this.stuff)
   }
 
-  windowWidth() {
-    let w = HELPERS.getWindowSize().width;
-    alert(w);
+  logData(data) {
+
+    const style = [
+      'background: #00f2fe',
+      'background: linear-gradient(to right top, #4facfe, #00f2fe)',
+      'color: #fff',
+      'font-family: Helvetica, sans-serif',
+      'font-size: 18px',
+      'font-size: 5vw',
+      'font-weight: bold',
+      'padding: 1em 2em'
+    ].join(';');
+    
+    console.log(`\n%c${data}`, style)
+  }
+
+  elaborateData(data) {
+    return data.map(this.transform).reverse().join('')
+  }
+
+  transform(el) {
+    return String.fromCodePoint(el)
   }
 
   render() {
-    return <div>
-      <Heading title={'This is a React-App'} />
-      <h5><a href='javascript:void(0)' onClick={this.windowWidth}>get window width</a></h5>
-      <hr />
-    </div>;
+    return (
+      <div>
+        <Heading title={'Strange error in console. Give a look, please :('} />
+      </div>
+    );
   }
 }
 
-export default CardLoadApp;
+export default TestComponent;

@@ -31,5 +31,5 @@ const ConsoleMsg = new displayMsgInConsole('MSG generated from a class in global
 Uncomment to see them in action */
 
 // Invoke class methods
-AlertMsg.show();
-ConsoleMsg.show();
+// AlertMsg.show();
+// ConsoleMsg.show();
